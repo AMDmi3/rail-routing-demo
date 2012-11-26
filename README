@@ -12,7 +12,7 @@ Repo structure
     * ObjectBases.hh
     * Objects.hh
 
-  Base class for multipass OSM parser
+  Base class for multipass OSM XML parser
     * ParserBase.hh
 
   Geographic math functions, namely distance and azimuth calculation
