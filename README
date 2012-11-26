@@ -1,0 +1,63 @@
+                             Rail routing demo
+                            ===================
+
+This is an an excerpt from my set of C++ OSM processing tools which
+implements railroad router.
+
+Repo structure
+==============
+
+  Base classes for OSM objects
+    * osmtypes.h
+    * ObjectBases.hh
+    * Objects.hh
+
+  Base class for multipass OSM parser
+    * ParserBase.hh
+
+  Geographic math functions, namely distance and azimuth calculation
+    * geomath.hh
+
+  Custom container with effecient lazy initialization
+    * lazyinit_array.hh
+
+  Custom memory pool container
+    * pool.hh
+
+  Routing implementation itself
+    * railrouting.cc
+    * railrouting.hh
+
+  Demonstration program
+    * raildemo.cc
+    * raildemo.osm
+
+Requirements
+============
+
+  * Expat XML parser library with headers
+  * CMake
+  * C++ compiler with c++0x support (gcc>=4.6)
+
+Building
+========
+
+   cmake . && make
+
+Running
+=======
+
+  ./raildemo raildemo.osm
+
+  This will load bundled raildemo.osm file with small part of Moscow
+  rail network and find a route between two hardcored stations.
+
+License
+=======
+
+  GPLv3
+
+Author
+======
+
+  Dmitry Marakasov <amdmi3@amdmi3.ru>
