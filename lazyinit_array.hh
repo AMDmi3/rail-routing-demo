@@ -83,7 +83,7 @@ public:
 		const size_t npage = n / EltPerPage;
 		if (!(page_initialized_[npage / 8] & (1 << (npage % 8)))) {
 			T* const page_start = data_.get() + npage * EltPerPage;
-			std::fill(page_start, page_start + EltPerPage, default_);
+			std::fill(page_start, std::min(page_start + EltPerPage, data_.get() + size_), default_);
 
 			page_initialized_[npage / 8] |= (1 << (npage % 8));
 		}
